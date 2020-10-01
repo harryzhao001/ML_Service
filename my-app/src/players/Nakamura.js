@@ -1,12 +1,12 @@
 import React from 'react';
 //import logo from './logo.svg';
-import './App.css';
+import './Nakamura.css';
 
 function Nakamura() {
     return (
         <div className="App">
             <header className="App-header">
-                {/* <img src={logo} className="App-logo" alt="logo" /> */}
+                <img src="https://pbs.twimg.com/media/EUX4JgBX0AEeKHc.png" className="App-logo" alt="logo" />
                 <p>
                     What type of chess player are you? Find out now!
                 </p>
@@ -17,14 +17,6 @@ function Nakamura() {
                     </label>
                     <input type="submit" value="Submit" />
                 </form>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    See list of playstyle types
-                </a>
             </header>
         </div>
     );
