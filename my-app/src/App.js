@@ -8,6 +8,10 @@ import {
   Link
 } from "react-router-dom";
 
+function Player() {
+  return Nakamura();
+}
+
 function HomeScreen() {
   return (
     <Router>
@@ -23,22 +27,22 @@ function HomeScreen() {
                 Enter your lichess username:
                 <input type="text" name="name" />
               </label>
-              <Link to="/player">Player</Link>
+              <Link to="/player">Submit</Link>
             </form>
-            <a
+            {/* <a
               className="App-link"
               href="https://reactjs.org"
               target="_blank"
               rel="noopener noreferrer"
             >
               See list of playstyle types
-            </a>
+            </a> */}
           </header>
         </div>
       </nav>
       <Switch>
         <Route path="/player">
-          <Nakamura />
+          <Player />
         </Route>
       </Switch>
     </Router>
