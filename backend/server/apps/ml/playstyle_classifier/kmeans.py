@@ -1,7 +1,7 @@
 import joblib
 import pandas as pd
 
-class KMeansClassifer:
+class KMeansClassifier:
     def __init__(self):
         path = "../../research/"
         self.encoders = joblib.load(path + "encoders-chess.joblib")

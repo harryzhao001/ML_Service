@@ -18,20 +18,32 @@ application = get_wsgi_application()
 import inspect
 from apps.ml.registry import MLRegistry
 from apps.ml.income_classifier.random_forest import RandomForestClassifier
+from apps.ml.playstyle_classifier.nnclassifier import NNClassifier
 
 try:
     registry = MLRegistry() # create ML registry
-    # Random Forest classifier
-    rf = RandomForestClassifier()
+    # # Random Forest classifier
+    # rf = RandomForestClassifier()
+    # # add to ML registry
+    # registry.add_algorithm(endpoint_name="income_classifier",
+    #                         algorithm_object=rf,
+    #                         algorithm_name="random forest",
+    #                         algorithm_status="production",
+    #                         algorithm_version="0.0.1",
+    #                         owner="Piotr",
+    #                         algorithm_description="Random Forest with simple pre- and post-processing",
+    #                         algorithm_code=inspect.getsource(RandomForestClassifier))
+    nn = NNClassifier()
     # add to ML registry
-    registry.add_algorithm(endpoint_name="income_classifier",
-                            algorithm_object=rf,
-                            algorithm_name="random forest",
+    registry.add_algorithm(endpoint_name="chess_playstyle_classifier",
+                            algorithm_object=nn,
+                            algorithm_name="neural network",
                             algorithm_status="production",
-                            algorithm_version="0.0.1",
-                            owner="Piotr",
-                            algorithm_description="Random Forest with simple pre- and post-processing",
-                            algorithm_code=inspect.getsource(RandomForestClassifier))
+                            algorithm_version="0.0.2",
+                            owner="Harry",
+                            algorithm_description="Neural Network with simple pre- and post-processing",
+                            algorithm_code=inspect.getsource(NNClassifier))
+
 
 except Exception as e:
     print("Exception while loading the algorithms to the registry,", str(e))
